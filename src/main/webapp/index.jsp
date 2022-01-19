@@ -9,7 +9,7 @@
 
 <!-- CANNOT INCLUDE HEADER.HTML IN INDEX.HTML -->
 
-<a href="index.html">HOME</a> &ensp;| &ensp; <a href="login.html">LOGIN</a> &ensp;| &ensp; <a href="services.html">SERVICES</a> &ensp;| &ensp; <a href="contact_us.html">CONTACT US</a>
+<a href="index.jsp">HOME</a> &ensp;| &ensp; <a href="login.html">LOGIN</a> &ensp;| &ensp; <a href="services.html">SERVICES</a> &ensp;| &ensp; <a href="contact_us.html">CONTACT US</a>
 <br>
 <p style="text-align:center;"><img src="img/index.jpg" alt="WELCOME" width="500" height="350"></p>
 </body>
