@@ -5,11 +5,9 @@
 <title>Report Portal</title>
 </head>
 <body>
-<img src="img/SP_banner.png" alt="Logo" width="1350" height="170">
+<jsp:include page="header.jsp"></jsp:include>
 
-<!-- CANNOT INCLUDE HEADER.HTML IN INDEX.HTML -->
-
-<a href="index.jsp">HOME</a> &ensp;| &ensp; <a href="login.html">LOGIN</a> &ensp;| &ensp; <a href="services.html">SERVICES</a> &ensp;| &ensp; <a href="contact_us.html">CONTACT US</a>
+<a href="index.jsp">HOME</a> &ensp;| &ensp; <a href="login.jsp">LOGIN</a> &ensp;| &ensp; <a href="services.jsp">SERVICES</a> &ensp;| &ensp; <a href="contact_us.jsp">CONTACT US</a>
 <br>
 <p style="text-align:center;"><img src="img/index.jpg" alt="WELCOME" width="500" height="350"></p>
 </body>

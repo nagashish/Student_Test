@@ -1,27 +1,17 @@
-
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-/**
- * Servlet implementation class test
- */
-@WebServlet("/login_check")
-public class login_check extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-  
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%@ page import="java.io.*,java.sql.*,javax.servlet.*" %>
+<%
+class logincheck extends HttpServlet 
+{
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection c = DB.DBConnection.getConnectionOracle(); 
 		RequestDispatcher rd = null;
@@ -41,8 +31,7 @@ public class login_check extends HttpServlet {
 				String name = rs.getString(1);
 				Cookie ck=new Cookie("name",name);
 				response.addCookie(ck);
-				rd = request.getRequestDispatcher("Admin_Home");
-				rd.forward(request, response);
+				response.sendRedirect("signup.jsp");
 			}
 			else if(rs1.next())
 			{
@@ -58,5 +47,8 @@ public class login_check extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
 }
+%>
+
+</body>
+</html>
