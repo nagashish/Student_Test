@@ -9,12 +9,7 @@
 <body>
 <%@ page import="java.io.*,java.sql.*,javax.servlet.*" %>
 <%
-class logincheck extends HttpServlet 
-{
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection c = DB.DBConnection.getConnectionOracle(); 
-		RequestDispatcher rd = null;
 		String mail = request.getParameter("email"); 
 		String pass = request.getParameter("password"); 
 		try {
@@ -29,26 +24,23 @@ class logincheck extends HttpServlet
 			if(rs.next())
 			{	
 				String name = rs.getString(1);
-				Cookie ck=new Cookie("name",name);
-				response.addCookie(ck);
-				response.sendRedirect("signup.jsp");
+				HttpSession se=request.getSession();
+				se.setAttribute("name",name);
+				request.getRequestDispatcher("AdminHome.jsp").forward(request, response);
 			}
 			else if(rs1.next())
 			{
-				rd = request.getRequestDispatcher("Student_Home");
-				rd.forward(request, response);
+				String name = rs.getString(2);
+				HttpSession se=request.getSession();
+				se.setAttribute("name",name);
+				request.getRequestDispatcher("StudentHome.jsp").forward(request, response);
 			}
-			PrintWriter out = response.getWriter();
-			rd = request.getRequestDispatcher("login.html");
-			rd.include(request, response);
+			request.getRequestDispatcher("login.jsp").include(request, response);
 			out.print("Invalid Email or Password");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-}
 %>
-
 </body>
 </html>
