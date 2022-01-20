@@ -1,32 +1,39 @@
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>LOGIN</title>
+<title>Login</title>
+<script >
+function call()
+{
+if(document.f.name.value==""){
+	alert("Please Enter Customer Name");
+	return false;
+}
+if(document.f.pass.value==""){
+	alert("Please Enter Ur Password");
+	return false;
+}
+}
+</script>
+<jsp:include page="header.jsp"></jsp:include>
 </head>
-<body>
-<div><img src="img/SP_banner.png" alt="Logo" width="1350" height="170">
-<a href="index.html">HOME</a> &ensp;| &ensp; <a href="login.html">LOGIN</a> &ensp;| &ensp; <a href="services.html">SERVICES</a> &ensp;| &ensp; <a href="contact_us.html">CONTACT US</a>
+<body>   
+<center><BR><BR>
+<font size="+2" color="#262626"><h2><b>Login Page</b></h2></font>
 <br>
-</div>
-<h1>LOGIN</h1>
-<form action="login_check">
-	<table>
- 		<tr>
- 			<td>E-Mail</td>
- 			<td><input type="email" name="email"></td>
- 		</tr>
- 		<tr>
- 			<td>PASSWORD</td>
- 			<td><input type="password" name="password"></td>
- 		</tr>
- 		<tr>
- 			<td><input type="submit" value="Login"></td>
- 		</tr>
- 		<tr>
- 			<td><a href="signup.html">Sign Up</a></td>
- 		</tr>
-	</table>
-</form>
-</body>
+<form  method=post action="logincheck.jsp" name="f" onSubmit=" return call()">
+ <table>
+ <tr>
+ <td><b>E Mail</td><td><input type="text" name="email" ></td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr> 
+<td><b> Password:</b></td><td><input type="password" name="password"></td>
+</tr>
+</table>
+<br> <BR>
+ <input type="submit" value="submit"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="reset" value="reset">
+ <br><br>
+ <a href="signup.jsp">Sign Up</a>
+ </form>
 </html>

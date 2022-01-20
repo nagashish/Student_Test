@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class login_check extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection c = DB.DBConnection.getConnectionOracle(); 
 		RequestDispatcher rd = null;
 		String mail = request.getParameter("email"); 
