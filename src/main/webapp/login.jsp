@@ -4,14 +4,14 @@
 <script >
 function call()
 {
-if(document.f.name.value==""){
-	alert("Please Enter Customer Name");
-	return false;
-}
-if(document.f.pass.value==""){
-	alert("Please Enter Ur Password");
-	return false;
-}
+	if(document.f.name.value==""){
+		alert("Please Enter Customer Name");
+		return false;
+	}
+	if(document.f.pass.value==""){
+		alert("Please Enter Ur Password");
+		return false;
+	}
 }
 </script>
 <jsp:include page="header.jsp"></jsp:include>
