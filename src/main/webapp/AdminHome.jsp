@@ -15,11 +15,8 @@
  if(!name.equals("")||name!=null)
  {
 	request.getRequestDispatcher("header2.jsp").include(request,response);
-%>
-	<h1 align='center'>Welcome <%=name %></h1><br>
-
 	out.print("<h1 align='center'>Welcome "+name+"</h1><br>");
-	out.print("<a href='add.html'>Add marks</a> &ensp;| &ensp; <a href='update.html'>Update Marks</a> &ensp;| &ensp; <a href='delete.html'>Delete Marks</a> &ensp;| &ensp; <a href='r1'>View Report</a><br><hr><br>");
+	out.print("<a href='addmarks.jsp'>Add marks</a> &ensp;| &ensp; <a href='updatemarks.jsp'>Update Marks</a> &ensp;| &ensp; <a href='deletemarks.jsp'>Delete Marks</a> &ensp;| &ensp; <a href='r1'>View Report</a><br><hr><br>");
 	Connection c = DB.DBConnection.getConnectionOracle();
 	try {
 		PreparedStatement ps = c.prepareStatement("select * from student");
