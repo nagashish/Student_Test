@@ -9,6 +9,7 @@
 <body>
 <%@ page import="java.io.*,java.sql.*,javax.servlet.*" %>
 <%
+try{
  HttpSession s = request.getSession(false);
  String name=(String)s.getAttribute("name");
  name = name.toUpperCase();
@@ -18,7 +19,7 @@
 	out.print("<h1 align='center'>Welcome "+name+"</h1><br>");
 	out.print("<a href='addmarks.jsp'>Add marks</a> &ensp;| &ensp; <a href='updatemarks.jsp'>Update Marks</a> &ensp;| &ensp; <a href='deletemarks.jsp'>Delete Marks</a> &ensp;| &ensp; <a href='r1'>View Report</a><br><hr><br>");
 	Connection c = DB.DBConnection.getConnectionOracle();
-	try {
+	
 		PreparedStatement ps = c.prepareStatement("select * from student");
 		ResultSet rs = ps.executeQuery("select * from student");
 		ResultSetMetaData rsmd=rs.getMetaData();
@@ -48,12 +49,13 @@
 			out.print("<td><a href=delete.html?roll="+roll+">Delete</a></td></tr>");
 			
 		}
-		
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
+ 	}
+} catch (SQLException | NullPointerException e) {
 		e.printStackTrace();
-	}
- }
+		request.getRequestDispatcher("login.jsp").include(request,response);
+		out.print("<center>Please Login First</center>");
+		 
+}
 %>
 </body>
 </html>
