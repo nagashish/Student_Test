@@ -36,4 +36,5 @@ function call()
  <br><br>
  <a href="signup.jsp">Sign Up</a>
  </form>
+ </center>
 </html>
