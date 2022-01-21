@@ -5,8 +5,9 @@
 <title>Add Record</title>
 </head>
 <body>
-	<h1><b>Add Student Marks</b></h1>
-	<form action="add" method="post">
+<jsp:include page="header2.jsp"></jsp:include>
+<h1><b>Add Student Marks</b></h1>
+	<form action="addmarks.jsp" method="post">
 		<table>
 			<tr>
 				<td>Roll No:</td>

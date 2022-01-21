@@ -17,7 +17,7 @@ try{
  {
 	request.getRequestDispatcher("header2.jsp").include(request,response);
 	out.print("<h1 align='center'>Welcome "+name+"</h1><br>");
-	out.print("<a href='addmarks.jsp'>Add marks</a> &ensp;| &ensp; <a href='updatemarks.jsp'>Update Marks</a> &ensp;| &ensp; <a href='deletemarks.jsp'>Delete Marks</a> &ensp;| &ensp; <a href='r1'>View Report</a><br><hr><br>");
+	out.print("<a href='add.jsp'>Add marks</a> &ensp;| &ensp; <a href='update.jsp'>Update Marks</a> &ensp;| &ensp; <a href='delete.jsp'>Delete Marks</a> &ensp;| &ensp; <a href='r1'>View Report</a><br><hr><br>");
 	Connection c = DB.DBConnection.getConnectionOracle();
 	
 		PreparedStatement ps = c.prepareStatement("select * from student");
