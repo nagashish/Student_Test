@@ -7,7 +7,7 @@
 <body>
 <jsp:include page="header2.jsp"></jsp:include>
 <h1><b>Add Student Marks</b></h1>
-	<form action="addmarks.jsp" method="post">
+	<form action="AddMarks.jsp" method="post">
 		<table>
 			<tr>
 				<td>Roll No:</td>

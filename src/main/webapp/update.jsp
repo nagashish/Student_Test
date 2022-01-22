@@ -5,9 +5,14 @@
 <title>Update Record</title>
 </head>
 <body>
+<jsp:include page="header2.jsp"></jsp:include>
 <h1><b>Update Student Record</b></h1>
-	<form action="update" method="post">
+	<form action="UpdateMarks.jsp" method="post">
 		<table>
+			<tr>	
+				<td>Roll No.</td>
+				<td><input type="number" name="roll"></td>
+			</tr>
 			<tr>	
 				<td>Marks 1</td>
 				<td><input type="number" name="m1"></td>

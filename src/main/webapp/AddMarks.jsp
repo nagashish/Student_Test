@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Marks</title>
 </head>
 <body>
 <%@ page import="java.io.*,java.sql.*,javax.servlet.*" %>
