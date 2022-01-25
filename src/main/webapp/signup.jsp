@@ -4,8 +4,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sign Up</title>
+<jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
+<center>
 	<h1><b>SIGN UP..</b></h1>
 	<form action="sign_up">
 		<table>
@@ -43,12 +45,10 @@
 					</select>
 					<input type="tel" placeholder="98480*****" name="phone">
 				</td>
-			</tr>
-			<tr>	
-				<td><input type="submit" value="Submit"></td>
-			</tr>
-			
-		</table>
+			</tr>			
+		</table><br>
+		<input type="submit" value="Submit">
 	</form>
+</center>
 </body>
 </html>

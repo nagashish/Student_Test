@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin Home</title>
 </head>
 <body>
 <%@ page import="java.io.*,java.sql.*,javax.servlet.*" %>
@@ -18,13 +17,17 @@ try{
 	request.getRequestDispatcher("header2.jsp").include(request,response);
 	out.print("<h1 align='center'>Welcome "+name+"</h1><br>");
 	out.print("<a href='add.jsp'>Add marks</a> &ensp;| &ensp; <a href='update.jsp'>Update Marks</a> &ensp;| &ensp; <a href='delete.jsp'>Delete Marks</a> &ensp;| &ensp; <a href='ViewReport.jsp'>View Report</a><br><hr><br>");
-	request.getRequestDispatcher("RecordTable_AdminHome.jsp").include(request,response);
- 	}
+%>
+<center><form action="ReportCard.jsp">
+	Roll No. 
+	<input type="number" name=roll><br><br>
+	<input type="submit" value="Search">
+</form></center>
+<br>
+<%
+ }
 } catch (NullPointerException e) {
-		e.printStackTrace();
-		request.getRequestDispatcher("login.jsp").include(request,response);
-		out.print("<center>Please Login First</center>");
-		 
+		e.printStackTrace();		 
 }
 %>
 </body>

@@ -4,11 +4,11 @@
 <script >
 function call()
 {
-	if(document.f.name.value==""){
-		alert("Please Enter Customer Name");
+	if(document.f.email.value==""){
+		alert("Please Enter Email");
 		return false;
 	}
-	if(document.f.pass.value==""){
+	if(document.f.password.value==""){
 		alert("Please Enter Ur Password");
 		return false;
 	}
