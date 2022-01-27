@@ -42,7 +42,8 @@ try{
 </head>
 <body>
 <%
-int m1 = 0,m2 = 0,m3 = 0,m4 = 0,m5 = 0, roll=0;
+int m1 = 0,m2 = 0,m3 = 0,m4 = 0,m5 = 0, roll=0,total=0;
+float percentage=0.0f;
 String name = null,fname = null;
 try{
 	roll =Integer.parseInt(request.getParameter("roll"));
@@ -50,8 +51,9 @@ try{
 	PreparedStatement ps = c.prepareStatement("SELECT name,father_name,marks1,marks2,marks3,marks4,marks5 FROM student INNER JOIN report ON report.roll=student.roll where report.roll =?");
 	ps.setInt(1, roll);
 	ResultSet rs = ps.executeQuery();
-	if(rs.next()){
-		while(rs.next())
+	int n=0;
+	if(rs.next())
+		while(n==0)
 		{	
 			name = rs.getString(1);
 			fname = rs.getString(2);
@@ -60,8 +62,19 @@ try{
 			m3 = rs.getInt(5);
 			m4 = rs.getInt(6);
 			m5 = rs.getInt(7);
+			%>
+			<jsp:useBean id="Percentage" class="Result.Calculation" scope="session"></jsp:useBean>
+			<jsp:setProperty name="Percentage" property="m1" value="<%= m1 %>" />
+			<jsp:setProperty name="Percentage" property="m2" value="<%= m2 %>" />
+			<jsp:setProperty name="Percentage" property="m3" value="<%= m3 %>" />
+			<jsp:setProperty name="Percentage" property="m4" value="<%= m4 %>" />
+			<jsp:setProperty name="Percentage" property="m5" value="<%= m5 %>" />
+			<%
+			total=Percentage.total();
+			percentage=Percentage.percent();
+			System.out.println(percentage+" "+total);
+			n++;
 		}
-	}
 	else{
 		response.sendRedirect("error.jsp?msg=Please Enter Valid Roll no.");
 	}
@@ -101,10 +114,18 @@ try{
 		<td>Marks4</td>
 		<td><%=m4 %></td>
 	</tr>
-	<tr>
 		<td>Marks5</td>
 		<td><%=m5 %></td>
-	</tr>		
+	</tr>	
+	<tr>
+		<td>Total</td>
+		<td><%=total %></td>
+	</tr>
+	<tr>
+		<td>Percentage</td>
+		<td><%=percentage %></td>
+	</tr>
+	<tr>	
 </table>
 </center>
 
