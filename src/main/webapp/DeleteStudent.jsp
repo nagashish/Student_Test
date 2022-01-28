@@ -4,17 +4,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 </head>
 <body>
 <%@ page import="java.io.*,java.sql.*,javax.servlet.*" %>
 <%@ page session = "false" %>
-<%!int check = 0; %>
+<%! int check=0; %>
 <%
 try
 {	
 	Connection c = DB.DBConnection.getConnectionOracle();
-	PreparedStatement ps = c.prepareStatement("DELETE FROM report WHERE roll=?");
+	PreparedStatement ps = c.prepareStatement("DELETE FROM student WHERE roll=?");
 	ps.setInt(1,Integer.parseInt(request.getParameter("roll")));
 	check=ps.executeUpdate();
 }
@@ -23,12 +22,12 @@ catch (NumberFormatException | SQLException e) {
 }
 if(check>=1)
 {
-	request.getRequestDispatcher("delete.jsp").include(request,response);
-	out.print("<h4>Student Marks Deleted</h4>");
+	request.getRequestDispatcher("AdminHome.jsp").include(request,response);
+	out.print("<h4>Student Record Deleted</h4>");
 }
 else 
 {	
-	request.getRequestDispatcher("delete.jsp").include(request,response);
+	request.getRequestDispatcher("AdminHome.jsp").include(request,response);
 	out.print("<h4>Error Deleting Record</h4>");
 }
 

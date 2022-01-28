@@ -7,6 +7,7 @@
 </head>
 <body>
 <%@ page import="java.sql.*" %>
+<%@ page session = "false" %>
 <%
 try{
 	Connection c = DB.DBConnection.getConnectionOracle();
@@ -35,8 +36,8 @@ try{
 		out.print("<td>"+rs.getString(5)+"</td>");
 		out.print("<td>"+rs.getString(6)+"</td>");
 		out.print("<td>"+rs.getString(7)+"</td>");
-		out.print("<td><a href=UpdateStudent.html?roll="+roll+">Update</a></td>");
-		out.print("<td><a href=delete.html?roll="+roll+">Delete</a></td></tr>");		
+		out.print("<td><a href=UpdateStudent.jsp?roll="+roll+">Update</a></td>");
+		out.print("<td><a href=DeleteStudent.jsp?roll="+roll+">Delete</a></td></tr>");		
 		}
 } catch(SQLException e){
 	e.printStackTrace();

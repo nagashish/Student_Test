@@ -8,6 +8,7 @@
 </head>
 <body>
 <%@ page import="java.io.*,java.sql.*,javax.servlet.*" %>
+<%@ page session = "false" %>
 <%
 try{
  HttpSession s = request.getSession(false);
