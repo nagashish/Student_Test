@@ -4,13 +4,32 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sign Up</title>
+<link rel="stylesheet" type="text/css" href="main.css">
 <jsp:include page="header.jsp"></jsp:include>
+<style type="text/css">
+table td{
+	font-weight: bold;
+	font-style: oblique;
+}
+.head {
+	color: red;
+	font-family: sans-serif;
+	font-weight: bolder;
+}
+.sub {
+            background-color:orange;
+            padding: 10px 40px 10px 40px;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+</style>
 </head>
 <body>
 <center>
-	<h1><b>SIGN UP..</b></h1>
+	<h1 class="head">SIGN UP..</h1>
 	<form action="sign_up">
-		<table>
+		<table cellspacing = 10px>
 			<tr>
 				<td>Name:</td>
 				<td><input type="text" placeholder="Name" name="name" required="required"></td>
@@ -47,7 +66,7 @@
 				</td>
 			</tr>			
 		</table><br>
-		<input type="submit" value="Submit">
+		<input class="sub" type="submit" value="Submit">
 	</form>
 </center>
 </body>

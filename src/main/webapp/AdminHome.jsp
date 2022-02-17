@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin Home</title>
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 <%@ page import="java.io.*,java.sql.*,javax.servlet.*" %>

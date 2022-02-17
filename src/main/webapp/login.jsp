@@ -1,18 +1,12 @@
-</html>
-
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="main.css"> 
 <title>Login</title>
 <style type="text/css">
    	.loginform {
             padding: 10px;
-            border: 1px solid pink;
-            border-radius: 10px;
-            width: 300px;
-             
-           margin: auto;
-          
-     
+            width: 300px;             
+           	margin: auto;
         }
 
         .formheading {
@@ -23,13 +17,11 @@
         }
 
         .sub {
-            background-color: red;
+            background-color:orange;
             padding: 10px 40px 10px 40px;
             color: white;
             font-weight: bold;
-            margin-left: 50px;
-            border-radius: 20px;
-            
+            border-radius: 10px;
         }
    </style>
 <script >
@@ -49,19 +41,18 @@ function call()
 </head>
 <body>   
 	<div class="loginform">
-        <h3 class="formheading">Please Login</h3>
 		<form  method=post action="logincheck.jsp" name="f" onSubmit="return call()">
-  			<table align="center">
+  			<table align="center" cellspacing = 20px>
                 <tr>
-                    <td>Email:</td>
+                    <td style="font-family: Berlin Sans FB Demi; font-weight: bold;">Email:</td>
                     <td><input type="email" name="email" /></td>
                 </tr>
                 <tr>
-                    <td>Password:</td>
+                    <td style="font-family: Berlin Sans FB Demi; font-weight: bold;">Password:</td>
                     <td><input type="password" name="password" /></td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align:center"><input class="sub" type="submit" value="login" /></td>
+                    <td colspan="2" style="text-align:center"><input class="sub" type="submit" value="Login" /></td>
                 </tr>
                 <tr>
                 	<td colspan="2" style="text-align:center"><a href="signup.jsp">Sign Up</a></td>

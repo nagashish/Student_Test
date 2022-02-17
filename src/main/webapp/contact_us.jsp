@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Contact US</title>
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 <h1>Contact_Us tab Here</h1>
